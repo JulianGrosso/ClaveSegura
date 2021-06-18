@@ -63,13 +63,13 @@ const genPassUser = (textoUsuario, nivel) => {
 		let caracter = textoUsuario.charAt(i);
 
 		caracter = caracter.replace(/[a-z]/, randomMayMin(caracter));
-		caracter = caracter.replace(/a/g, caracterSeguroA(caracter));
-		caracter = caracter.replace(/e/g, caracterSeguroE(caracter));
-		caracter = caracter.replace(/i/g, caracterSeguroI(caracter));
-		caracter = caracter.replace(/o/g, caracterSeguroO(caracter));
-		caracter = caracter.replace(/s/g, caracterSeguroS(caracter));
-		caracter = caracter.replace(/t/g, caracterSeguroT(caracter));
-		caracter = caracter.replace(/y/g, caracterSeguroY(caracter));
+		caracter = caracter.replace(/a/i, caracterSeguroA());
+		caracter = caracter.replace(/e/i, caracterSeguroE());
+		caracter = caracter.replace(/i/i, caracterSeguroI());
+		caracter = caracter.replace(/o/i, caracterSeguroO());
+		caracter = caracter.replace(/s/i, caracterSeguroS());
+		caracter = caracter.replace(/t/i, caracterSeguroT());
+		caracter = caracter.replace(/y/i, caracterSeguroY());
 
 		newPass += caracter;
 	}
@@ -79,7 +79,7 @@ const genPassUser = (textoUsuario, nivel) => {
 
 //-------- Replacement functions by character --------
 
-function caracterSeguroA(caracter) {
+function caracterSeguroA() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Aa4@";
 
@@ -90,7 +90,7 @@ function caracterSeguroA(caracter) {
 	return newCaracterSeguro;
 }
 
-function caracterSeguroE(caracter) {
+function caracterSeguroE() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Ee3";
 
@@ -101,7 +101,7 @@ function caracterSeguroE(caracter) {
 	return newCaracterSeguro;
 }
 
-function caracterSeguroI(caracter) {
+function caracterSeguroI() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Ii!¡1";
 
@@ -112,7 +112,7 @@ function caracterSeguroI(caracter) {
 	return newCaracterSeguro;
 }
 
-function caracterSeguroO(caracter) {
+function caracterSeguroO() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Oo0";
 
@@ -123,7 +123,7 @@ function caracterSeguroO(caracter) {
 	return newCaracterSeguro;
 }
 
-function caracterSeguroS(caracter) {
+function caracterSeguroS() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Ss5$";
 
@@ -134,7 +134,7 @@ function caracterSeguroS(caracter) {
 	return newCaracterSeguro;
 }
 
-function caracterSeguroT(caracter) {
+function caracterSeguroT() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Tt7";
 
@@ -145,7 +145,7 @@ function caracterSeguroT(caracter) {
 	return newCaracterSeguro;
 }
 
-function caracterSeguroY(caracter) {
+function caracterSeguroY() {
 	let newCaracterSeguro = "";
 	const caracteresSeguros = "Yy&";
 
