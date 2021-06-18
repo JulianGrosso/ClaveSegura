@@ -213,6 +213,16 @@ $btnRefreshPass.addEventListener("click", () => {
 	passwordRefresh();
 });
 
+//--------------- Password Refresh: User Text Entry ---------------
+
+$userText.addEventListener("input", userTextEntryRefresh);
+
+function userTextEntryRefresh() {
+	if (optionTextUser === true) {
+		passwordRefresh();
+	}
+}
+
 //--------------- Personalization System ---------------
 
 function passwordLevelSwitcher(optionNum, optionSimb, optionTextUser) {
