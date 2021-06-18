@@ -30,6 +30,10 @@ body {
 	overflow: hidden;
 }
 
+.display-none {
+	display: none !important;
+}
+
 /* ---------------- INTRO SLIDER ---------------- */
 
 .slider-container {
@@ -334,7 +338,8 @@ body {
 }
 
 .range-text {
-	margin-left: 1.45rem;
+	font-size: 1rem;
+	margin-left: 1.8rem;
 }
 
 .longitud-selector {
@@ -343,6 +348,7 @@ body {
 }
 
 .longitud-valor {
+	font-size: 1rem;
 	font-weight: bold;
 }
 
@@ -411,14 +417,6 @@ input[type="range"]::-ms-track {
 	background-color: hsl(0, 0%, 85%);
 	height: 3px;
 }
-
-/* input[type="range"]::-ms-fill-lower {
-	background-color: HotPink;
-}
-
-input[type="range"]::-ms-fill-upper {
-	background-color: black;
-} */
 
 .input-disabled::-webkit-slider-thumb {
 	background-color: hsl(0, 0%, 80%) !important;
