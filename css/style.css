@@ -282,7 +282,7 @@ body {
 	width: 90%;
 	padding-bottom: 0.6rem;
 	border-bottom: 2px solid hsl(0, 0%, 86%);
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.2rem;
 }
 
 .btn-opciones {
@@ -456,7 +456,7 @@ input[type="range"]::-ms-track {
 	font-size: 1.1rem;
 	text-align: center;
 	border-bottom: 2px solid hsl(0, 0%, 86%);
-	margin-bottom: 1rem;
+	margin-bottom: 1.2rem;
 	width: 100%;
 }
 
@@ -478,8 +478,8 @@ input[type="range"]::-ms-track {
 }
 
 .btn-texto-usuario {
-	height: 2.5rem;
-	width: 8rem;
+	height: 3rem;
+	width: 9rem;
 	font-size: 1rem;
 }
 
