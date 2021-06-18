@@ -347,7 +347,6 @@ $btnTextUser.addEventListener("click", () => {
 
 	if (button === "btn btn-texto-usuario") {
 		$btnTextUser.classList.add("btn-active");
-		$btnTextUser.value = "Activado";
 		optionTextUser = true;
 
 		optionNum = false;
@@ -367,7 +366,6 @@ $btnTextUser.addEventListener("click", () => {
 		passwordRefresh();
 	} else if (button === "btn btn-texto-usuario btn-active") {
 		$btnTextUser.classList.remove("btn-active");
-		$btnTextUser.value = "Convertír";
 		optionTextUser = false;
 
 		optionNum = true;
