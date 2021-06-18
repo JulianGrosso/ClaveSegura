@@ -10,14 +10,13 @@
 		<title>Clave Segura</title>
 	</head>
 	<body id="body" class="overflow-hidden">
-		<section class="slider-container">
+		<section class="slider-container no-seleccionable">
 			<div class="slide pagina-01" id="p01">
 				<img
 					src="./assets/img/Logo.png"
 					alt="Logo clave segura"
 					class="img-p01"
 				/>
-				<!-- <h1 class="titulo-p01">CLAVE SEGURA</h1> -->
 				<img src="./assets/img/Loader.png" alt="loading" class="loader" />
 			</div>
 			<div class="slide pagina-02" id="p02">
@@ -42,14 +41,177 @@
 				</div>
 				<button class="btn-intro" id="btnEmpezar">Empezar</button>
 			</div>
-			<div>
+		</section>
+
+		<section class="main-page">
+			<div class="head no-seleccionable">
 				<img
-					src="./assets/img/Main-preview.png"
-					alt="Preview"
-					class="main-preview"
+					src="./assets/img/Logo.png"
+					alt="Logo clave segura"
+					class="logo-head"
 				/>
+				<div class="titulo-head">
+					<h1 class="h1-titulo">TU NUEVA CONTRASEÑA AL INSTANTE</h1>
+					<p class="p-bajada">
+						Genera contraseñas seguras y aleatorias para mantenerte a salvo en
+						la red.
+					</p>
+				</div>
+			</div>
+			<div class="pass-view">
+				<div class="pass-holder">
+					<img
+						src="./assets/img/Logo.png"
+						alt="Logo clave segura"
+						class="logo-pass-holder no-seleccionable"
+					/>
+					<p class="password-text" id="passwordText"></p>
+					<img
+						src="./assets/img/Copy.svg"
+						alt="Copiar"
+						class="btn-copy-pass-desktop no-seleccionable"
+						id="btnCopy"
+					/>
+					<img
+						src="./assets/img/Refresh.svg"
+						alt="Actualizar"
+						class="btn-refresh-pass-mobile no-seleccionable"
+						id="btnRefreshPass"
+					/>
+				</div>
+				<div class="pass-refresh-desktop no-seleccionable">
+					<img
+						src="./assets/img/Refresh.svg"
+						alt="Actualizar"
+						class="btn-refresh-pass"
+						id="btnRefreshPass"
+					/>
+				</div>
+				<form
+					onsubmit="return passwordRefresh();"
+					class="opciones-container no-seleccionable"
+					action="javascript:void(0);"
+				>
+					<h2 class="titulo-opciones">Personaliza tu contraseña</h2>
+					<div class="btn-opciones">
+						<input
+							type="button"
+							value="Números"
+							id="btnOpNumeros"
+							class="btn btn-numeros btn-active"
+						/>
+						<input
+							type="button"
+							value="Símbolos"
+							id="btnOpSimbolos"
+							class="btn btn-simbolos"
+						/>
+					</div>
+					<div class="longitud-range">
+						<p class="range-text" id="rengeText">Longitud</p>
+						<input
+							type="range"
+							value="12"
+							min="8"
+							max="14"
+							class="longitud-selector"
+							id="longitud"
+						/>
+						<p id="longitudValor" class="longitud-valor"></p>
+					</div>
+					<div class="texto-usuario-container">
+						<h2 class="titulo-texto-input-usuario">
+							Convertí tu frase favorita en una contraseña segura
+						</h2>
+						<input
+							type="text"
+							class="texto-input-usuario"
+							id="userText"
+							placeholder="Ingrese su texto acá."
+							maxlength="14"
+						/>
+						<input
+							type="button"
+							value="Convertír"
+							id="btnTextUser"
+							class="btn btn-texto-usuario"
+						/>
+					</div>
+				</form>
+			</div>
+
+			<article class="info-container no-seleccionable">
+				<div class="titulo-info-container">
+					<img
+						src="./assets/img/Logo.png"
+						alt="Logo clave segura"
+						class="logo-info"
+					/>
+					<h2 class="titulo-info">
+						Las mejores recomendaciones de los expertos
+					</h2>
+				</div>
+				<p class="texto-parrafo">
+					1. Utilice siempre una contraseña única para cada cuenta que cree. El
+					peligro de reutilizar contraseñas es que tan pronto como un sitio web
+					se enfrente a un problema de seguridad, a los hackers les resulta muy
+					fácil probar la misma combinación de nombre de usuario y contraseña en
+					otros sitios web.
+				</p>
+				<p class="texto-parrafo">
+					2. No utilice información personal en sus contraseñas. Los nombres,
+					cumpleaños y direcciones postales pueden ser sencillos de recordar,
+					pero también se pueden encontrar con facilidad en Internet y su uso
+					como contraseñas se debe evitar siempre para garantizar la máxima
+					seguridad.
+				</p>
+				<p class="texto-parrafo">
+					3. Asegúrese de que las contraseñas tengan como mínimo 12 caracteres y
+					contengan letras, números y caracteres especiales.
+				</p>
+				<p class="texto-parrafo">
+					4. Evite las contraseñas débiles de uso habitual como asd123,
+					contraseña1, o Temp!. Entre los ejemplos de contraseñas seguras se
+					incluyen: S&2x4S12nLS1*, JANa@sx3l2&s$, 49915w5$oYmH.
+				</p>
+				<p class="texto-parrafo">
+					5. Evite usar información personal para sus preguntas de seguridad; en
+					su lugar, genere otra "contraseña" y guárdela como la respuesta a
+					estas preguntas. ¿El motivo? Los hackers pueden encontrar fácilmente
+					parte de esta información, como el nombre de la calle en la que se
+					crió o de su mascota favorita, y la pueden usar en un ataque por
+					fuerza bruta para acceder a sus cuentas.
+				</p>
+				<p class="texto-parrafo">
+					6. Evite el uso de contraseñas similares en las que solo cambia una
+					palabra o carácter. Esta práctica debilita la seguridad de sus cuentas
+					en varios sitios web.
+				</p>
+				<p class="texto-parrafo">
+					7. Cambie sus contraseñas cuanto tenga un motivo para ello, como por
+					ejemplo cuando las haya compartido con alguien, tras la vulneración de
+					un sitio web o si ha pasado más de un año desde la última vez que las
+					actualizó.
+				</p>
+				<p class="texto-parrafo">
+					8. Nunca comparta sus contraseñas por correo electrónico o mensaje de
+					texto.
+				</p>
+			</article>
+
+			<div class="footer-container no-seleccionable">
+				<p class="texto-footer">Desarrollado por Julian Grosso | 2021</p>
+				<a
+					href="https://github.com/JulianGrosso"
+					target="_blank"
+					class="github-link"
+				>
+					<img src="./assets/img/Github Logo.svg" alt="Github Logo" />
+					<p class="texto-footer">/JulianGrosso</p>
+				</a>
 			</div>
 		</section>
+
 		<script src="./js/app.js"></script>
 	</body>
 </html>

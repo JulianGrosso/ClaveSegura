@@ -28,6 +28,8 @@ $btnEmpezar.addEventListener("click", () => {
 const letrasMayMin = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 const letrasMayMinNum =
 	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789012345678901234567890123456789";
+const letrasMayMinSimb =
+	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz¡!@#$%&/()=¿?^+*[]{},;.:-_<>";
 const letrasMayMinNumSimb =
 	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz01234567890123456789¡!@#$%&/()=¿?^+*[]{},;.:-_<>";
 
@@ -45,8 +47,9 @@ const genPass = (longitudPass, caracteres) => {
 //--------------- Generador de Password según texto del usuario ---------------
 //
 
-const genPassUser = (textoUsuario) => {
+const genPassUser = (textoUsuario, nivel) => {
 	textoUsuario = textoUsuario.toLowerCase().replace(/ /g, "");
+	nivel = "Alto";
 
 	let newPass = "";
 	let textoUsuarioLength = textoUsuario.length;
@@ -68,7 +71,7 @@ const genPassUser = (textoUsuario) => {
 	return newPass;
 };
 
-//-------- Funciones de remplazo según caracter --------
+//-------- Replacement functions by character --------
 
 function caracterSeguroA(caracter) {
 	let newCaracterSeguro = "";
@@ -147,6 +150,227 @@ function caracterSeguroY(caracter) {
 	return newCaracterSeguro;
 }
 
+//
+//
+//--------------- Password Text Holder ---------------
+
+const $passwordText = document.querySelector("#passwordText");
+
+//--------------- User Text Holder ---------------
+
+const $userText = document.getElementById("userText");
+
+//--------------- System Default: 12 caracteres + MAY min Num ---------------
+
+let passwordLenght = 12;
+let passwordLevel = letrasMayMinNum;
+
+let optionNum = true;
+let optionSimb = false;
+let optionTextUser = false;
+let passwordFunction = genPass;
+
+//--------------- Password Display in Text Holder ---------------
+
+function passwordDisplay(passwordLenght, passwordLevel, passwordFunction) {
+	$passwordText.innerHTML = passwordFunction(passwordLenght, passwordLevel);
+}
+
+//--------------- Password Refresh ---------------
+
+function passwordRefresh() {
+	passwordLevelSwitcher(optionNum, optionSimb, optionTextUser);
+	passwordDisplay(passwordLenght, passwordLevel, passwordFunction);
+}
+
+passwordRefresh();
+
+//--------------- Password Refresh Button ---------------
+
+const $btnRefreshPass = document.querySelector("#btnRefreshPass");
+
+$btnRefreshPass.addEventListener("click", () => {
+	passwordRefresh();
+});
+
+//--------------- Personalization System ---------------
+
+function passwordLevelSwitcher(optionNum, optionSimb, optionTextUser) {
+	if (
+		(optionNum === false) &
+		(optionSimb === false) &
+		(optionTextUser === false)
+	) {
+		passwordLevel = letrasMayMin;
+		passwordFunction = genPass;
+	}
+
+	if (
+		(optionNum === true) &
+		(optionSimb === false) &
+		(optionTextUser === false)
+	) {
+		passwordLevel = letrasMayMinNum;
+		passwordFunction = genPass;
+	}
+
+	if (
+		(optionNum === false) &
+		(optionSimb === true) &
+		(optionTextUser === false)
+	) {
+		passwordLevel = letrasMayMinSimb;
+		passwordFunction = genPass;
+	}
+
+	if (
+		(optionNum === true) &
+		(optionSimb === true) &
+		(optionTextUser === false)
+	) {
+		passwordLevel = letrasMayMinNumSimb;
+		passwordFunction = genPass;
+	}
+
+	if (
+		(optionNum === false) &
+		(optionSimb === false) &
+		(optionTextUser === true)
+	) {
+		passwordFunction = genPassUser;
+		passwordLenght = $userText.value;
+	}
+}
+
+//--------------- Password Copy Desktop ---------------
+
+const $btnCopy = document.querySelector("#btnCopy");
+
+function copiar() {
+	const cb = navigator.clipboard;
+	const text = $passwordText;
+	cb.writeText(text.innerText).then(() => function () {});
+}
+
+$btnCopy.addEventListener("click", () => {
+	copiar();
+});
+
+//
+//
+//--------------- Password Personalization Options ---------------
+//
+//
+
+//--------------- Option Button: Números ---------------
+
+const $btnOpNumeros = document.querySelector("#btnOpNumeros");
+
+$btnOpNumeros.addEventListener("click", () => {
+	let button = $btnOpNumeros.classList.value;
+
+	if (button === "btn btn-numeros") {
+		$btnOpNumeros.classList.add("btn-active");
+		optionNum = true;
+		passwordRefresh();
+	} else if (button === "btn btn-numeros btn-active") {
+		$btnOpNumeros.classList.remove("btn-active");
+		optionNum = false;
+		passwordRefresh();
+	}
+});
+
+//--------------- Option Button: Símbolos ---------------
+
+const $btnOpSimbolos = document.querySelector("#btnOpSimbolos");
+
+$btnOpSimbolos.addEventListener("click", () => {
+	let button = $btnOpSimbolos.classList.value;
+
+	if (button === "btn btn-simbolos") {
+		$btnOpSimbolos.classList.add("btn-active");
+		optionSimb = true;
+		passwordRefresh();
+	} else if (button === "btn btn-simbolos btn-active") {
+		$btnOpSimbolos.classList.remove("btn-active");
+		optionSimb = false;
+		passwordRefresh();
+	}
+});
+
+//--------------- Option Range: Longitud de Caracteres ---------------
+
+let $inputRange = document.querySelector("#longitud");
+let $inputText = document.querySelector("#longitudValor");
+let $rangeText = document.querySelector("#rengeText");
+
+$inputText.innerHTML = $inputRange.value;
+
+passwordLenght = $inputRange.value;
+
+$inputRange.addEventListener(
+	"input",
+	function () {
+		$inputText.innerHTML = $inputRange.value;
+		passwordLenght = $inputRange.value;
+		passwordRefresh();
+	},
+	false
+);
+
+//--------------- Option Button: Convertir Texto del Usuario ---------------
+
+const $btnTextUser = document.querySelector("#btnTextUser");
+
+$btnTextUser.addEventListener("click", () => {
+	let button = $btnTextUser.classList.value;
+
+	if (button === "btn btn-texto-usuario") {
+		$btnTextUser.classList.add("btn-active");
+		$btnTextUser.value = "Activado";
+		optionTextUser = true;
+
+		optionNum = false;
+		$btnOpNumeros.classList.remove("btn-active");
+
+		optionSimb = false;
+		$btnOpSimbolos.classList.remove("btn-active");
+
+		$inputRange.disabled = true;
+		$inputRange.classList.add("input-disabled");
+
+		$inputText.classList.add("valor-disable");
+		$rangeText.classList.add("valor-disable");
+
+		passwordRefresh();
+	} else if (button === "btn btn-texto-usuario btn-active") {
+		$btnTextUser.classList.remove("btn-active");
+		$btnTextUser.value = "Convertír";
+		optionTextUser = false;
+
+		optionNum = true;
+		$btnOpNumeros.classList.add("btn-active");
+
+		optionSimb = false;
+		$btnOpSimbolos.classList.remove("btn-active");
+
+		$inputRange.disabled = false;
+		$inputRange.classList.remove("input-disabled");
+
+		$inputText.classList.remove("valor-disable");
+		$rangeText.classList.remove("valor-disable");
+
+		passwordLenght = $inputRange.value;
+
+		passwordRefresh();
+	}
+});
+
+//
+//
+//
+//
+//
 //-----------------------------------------------------
 
 // Test
@@ -168,3 +392,5 @@ function caracterSeguroY(caracter) {
 // 	"Contraseña a partir del texto del usuario = MAY + min + NUM + SIMBOLOS: Ej. 'My App Its Alive!' = " +
 // 		genPassUser("My App Its Alive!")
 // );
+
+//-----------------------------------------------------
