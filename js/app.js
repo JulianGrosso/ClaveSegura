@@ -57,6 +57,7 @@ const genPassUser = (textoUsuario, nivel) => {
 	for (let i = 0; i < textoUsuarioLength; i++) {
 		let caracter = textoUsuario.charAt(i);
 
+		caracter = caracter.replace(/[a-z]/, randomMayMin(caracter));
 		caracter = caracter.replace(/a/g, caracterSeguroA(caracter));
 		caracter = caracter.replace(/e/g, caracterSeguroE(caracter));
 		caracter = caracter.replace(/i/g, caracterSeguroI(caracter));
@@ -146,6 +147,20 @@ function caracterSeguroY(caracter) {
 	newCaracterSeguro += caracteresSeguros.charAt(
 		Math.floor(Math.random() * caracteresSeguros.length)
 	);
+
+	return newCaracterSeguro;
+}
+
+function randomMayMin(caracter) {
+	let newCaracterSeguro = "";
+
+	const controller = Math.floor(Math.random() * 100);
+
+	if (controller % 2 === 1) {
+		caracter = caracter.toUpperCase();
+	}
+
+	newCaracterSeguro += caracter;
 
 	return newCaracterSeguro;
 }
