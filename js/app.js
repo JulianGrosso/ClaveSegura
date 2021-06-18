@@ -352,9 +352,11 @@ $btnTextUser.addEventListener("click", () => {
 
 		optionNum = false;
 		$btnOpNumeros.classList.remove("btn-active");
+		$btnOpNumeros.disabled = true;
 
 		optionSimb = false;
 		$btnOpSimbolos.classList.remove("btn-active");
+		$btnOpSimbolos.disabled = true;
 
 		$inputRange.disabled = true;
 		$inputRange.classList.add("input-disabled");
@@ -370,9 +372,11 @@ $btnTextUser.addEventListener("click", () => {
 
 		optionNum = true;
 		$btnOpNumeros.classList.add("btn-active");
+		$btnOpNumeros.disabled = false;
 
 		optionSimb = false;
 		$btnOpSimbolos.classList.remove("btn-active");
+		$btnOpSimbolos.disabled = false;
 
 		$inputRange.disabled = false;
 		$inputRange.classList.remove("input-disabled");
