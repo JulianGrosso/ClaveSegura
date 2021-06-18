@@ -31,16 +31,19 @@ const letrasMayMin = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 const letrasMayMinNum =
 	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789012345678901234567890123456789";
 const letrasMayMinSimb =
-	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz¡!@#$%&/()=¿?^+*[]{},;.:-_<>";
+	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz¡!@#$%&/()=¿?+*[]{},.:;-_";
 const letrasMayMinNumSimb =
-	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz01234567890123456789¡!@#$%&/()=¿?^+*[]{},;.:-_<>";
+	"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz01234567890123456789¡!@#$%&/()=¿?+*[]{},.:;-_";
 
 const genPass = (longitudPass, caracteres) => {
 	let newPass = "";
 	const caracteresLength = caracteres.length;
+
 	for (let i = 0; i < longitudPass; i++) {
 		newPass += caracteres.charAt(Math.floor(Math.random() * caracteresLength));
 	}
+
+	newPass = String(newPass);
 
 	return newPass;
 };
