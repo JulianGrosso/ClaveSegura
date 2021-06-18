@@ -325,8 +325,8 @@ body {
 .btn-simbolos {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
-	height: 2.5rem;
-	width: 8rem;
+	height: 3rem;
+	width: 7.5rem;
 }
 
 .longitud-range {
@@ -462,7 +462,7 @@ input[type="range"]::-ms-track {
 
 .texto-input-usuario {
 	height: 3rem;
-	width: 100%;
+	width: 90%;
 	background: hsl(0, 0%, 89%);
 	border-radius: 100px;
 	border: none;
@@ -472,6 +472,7 @@ input[type="range"]::-ms-track {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 1.1rem;
+	border: 2px solid hsla(191, 83%, 47%, 0.3);
 	margin-bottom: 1rem;
 	outline: none;
 }
