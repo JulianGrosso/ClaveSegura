@@ -380,7 +380,6 @@ body {
 
 input[type="range"] {
 	display: block;
-	/* width: 250px; */
 }
 
 input[type="range"]:focus {
@@ -486,6 +485,7 @@ input[type="range"]::-ms-track {
 	height: 3rem;
 	width: 90%;
 	background: hsl(0, 0%, 89%);
+	-webkit-border-radius: 100px;
 	border-radius: 100px;
 	border: none;
 	color: hsl(0, 0%, 55%);
@@ -497,6 +497,8 @@ input[type="range"]::-ms-track {
 	border: 2px solid hsla(191, 83%, 47%, 0.3);
 	margin-bottom: 1rem;
 	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 
 .btn-texto-usuario {
