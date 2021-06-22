@@ -482,6 +482,8 @@ input[type="range"]::-ms-track {
 }
 
 .texto-input-usuario {
+	-webkit-appearance: none;
+	-webkit-border-radius: none;
 	height: 3rem;
 	width: 90%;
 	background: hsl(0, 0%, 89%);
