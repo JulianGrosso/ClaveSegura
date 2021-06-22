@@ -45,100 +45,102 @@
 		</section>
 
 		<section class="main-page display-none" id="mainPage">
-			<div class="head no-seleccionable">
-				<img
-					src="./assets/img/Logo.png"
-					alt="Logo clave segura"
-					class="logo-head"
-				/>
-				<div class="titulo-head">
-					<h1 class="h1-titulo">TU NUEVA CONTRASEÑA AL INSTANTE</h1>
-					<p class="p-bajada">
-						Genera contraseñas seguras y aleatorias para mantenerte a salvo en
-						la red.
-					</p>
-				</div>
-			</div>
-			<div class="pass-view">
-				<div class="pass-holder">
+			<div class="pass-generator">
+				<div class="head no-seleccionable">
 					<img
 						src="./assets/img/Logo.png"
 						alt="Logo clave segura"
-						class="logo-pass-holder no-seleccionable"
+						class="logo-head"
 					/>
-					<p class="password-text" id="passwordText"></p>
-					<img
-						src="./assets/img/Copy.svg"
-						alt="Copiar"
-						class="btn-copy-pass-desktop no-seleccionable"
-						id="btnCopy"
-					/>
-					<img
-						src="./assets/img/Refresh.svg"
-						alt="Actualizar"
-						class="btn-refresh-pass-mobile no-seleccionable"
-						id="btnRefreshPass"
-					/>
+					<div class="titulo-head">
+						<h1 class="h1-titulo">TU NUEVA CONTRASEÑA AL INSTANTE</h1>
+						<p class="p-bajada">
+							Genera contraseñas seguras y aleatorias para mantenerte a salvo en
+							la red.
+						</p>
+					</div>
 				</div>
-				<div class="pass-refresh-desktop no-seleccionable">
-					<img
-						src="./assets/img/Refresh.svg"
-						alt="Actualizar"
-						class="btn-refresh-pass"
-						id="btnRefreshPass"
-					/>
+				<div class="pass-view">
+					<div class="pass-holder">
+						<img
+							src="./assets/img/Logo.png"
+							alt="Logo clave segura"
+							class="logo-pass-holder no-seleccionable"
+						/>
+						<p class="password-text" id="passwordText"></p>
+						<img
+							src="./assets/img/Copy.svg"
+							alt="Copiar"
+							class="btn-copy-pass-desktop no-seleccionable"
+							id="btnCopy"
+						/>
+						<img
+							src="./assets/img/Refresh.svg"
+							alt="Actualizar"
+							class="btn-refresh-pass-mobile no-seleccionable"
+							id="btnRefreshPass"
+						/>
+					</div>
+					<div class="pass-refresh-desktop no-seleccionable">
+						<img
+							src="./assets/img/Refresh.svg"
+							alt="Actualizar"
+							class="btn-refresh-pass"
+							id="btnRefreshPass"
+						/>
+					</div>
+					<form
+						onsubmit="return passwordRefresh();"
+						class="opciones-container no-seleccionable"
+						action="javascript:void(0);"
+					>
+						<h2 class="titulo-opciones">Generá tu contraseña</h2>
+						<div class="btn-opciones">
+							<input
+								type="button"
+								value="Números"
+								id="btnOpNumeros"
+								class="btn btn-numeros btn-active"
+							/>
+							<input
+								type="button"
+								value="Símbolos"
+								id="btnOpSimbolos"
+								class="btn btn-simbolos"
+							/>
+						</div>
+						<div class="longitud-range">
+							<p class="range-text" id="rengeText">Longitud</p>
+							<input
+								type="range"
+								value="12"
+								min="8"
+								max="14"
+								class="longitud-selector"
+								id="longitud"
+							/>
+							<p id="longitudValor" class="longitud-valor"></p>
+						</div>
+						<div class="texto-usuario-container">
+							<h2 class="titulo-texto-input-usuario">
+								Personalizá tu contraseña con tu frase favorita
+							</h2>
+							<input
+								type="text"
+								class="texto-input-usuario"
+								id="userText"
+								placeholder="Ingresá tu frase aquí"
+								maxlength="14"
+							/>
+							<input
+								type="button"
+								value="Personalizar"
+								id="btnTextUser"
+								class="btn btn-texto-usuario"
+							/>
+						</div>
+					</form>
 				</div>
-				<form
-					onsubmit="return passwordRefresh();"
-					class="opciones-container no-seleccionable"
-					action="javascript:void(0);"
-				>
-					<h2 class="titulo-opciones">Generá tu contraseña</h2>
-					<div class="btn-opciones">
-						<input
-							type="button"
-							value="Números"
-							id="btnOpNumeros"
-							class="btn btn-numeros btn-active"
-						/>
-						<input
-							type="button"
-							value="Símbolos"
-							id="btnOpSimbolos"
-							class="btn btn-simbolos"
-						/>
-					</div>
-					<div class="longitud-range">
-						<p class="range-text" id="rengeText">Longitud</p>
-						<input
-							type="range"
-							value="12"
-							min="8"
-							max="14"
-							class="longitud-selector"
-							id="longitud"
-						/>
-						<p id="longitudValor" class="longitud-valor"></p>
-					</div>
-					<div class="texto-usuario-container">
-						<h2 class="titulo-texto-input-usuario">
-							Personalizá tu contraseña con tu frase favorita
-						</h2>
-						<input
-							type="text"
-							class="texto-input-usuario"
-							id="userText"
-							placeholder="Ingresá tu frase aquí"
-							maxlength="14"
-						/>
-						<input
-							type="button"
-							value="Personalizar"
-							id="btnTextUser"
-							class="btn btn-texto-usuario"
-						/>
-					</div>
-				</form>
 			</div>
 
 			<article class="info-container no-seleccionable">

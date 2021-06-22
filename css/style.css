@@ -42,7 +42,6 @@ body {
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: 1fr;
-	/* display: none; */
 }
 
 .slide {
@@ -68,13 +67,6 @@ body {
 	top: -3rem;
 	width: 11.25rem;
 	height: auto;
-}
-
-.titulo-p01 {
-	font-size: 30px;
-	font-weight: bold;
-	position: relative;
-	top: -2rem;
 }
 
 .pagina-02 {
@@ -167,6 +159,14 @@ body {
 	width: 100vw;
 	position: absolute;
 	top: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* ---------------- Password Generator Module ---------------- */
+
+.pass-generator {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -580,4 +580,194 @@ input[type="range"]::-ms-track {
 	margin-left: 0.2rem;
 	font-size: 1rem;
 	color: hsl(0, 0%, 100%);
+}
+
+/* -------------- MEDIA QUERIES -------------- */
+
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+	.h1-titulo {
+		font-size: 2.6rem !important;
+		line-height: 50px !important;
+		width: 32rem !important;
+	}
+
+	.pass-view {
+		padding-left: 2rem !important;
+	}
+
+	.logo-head {
+		margin-top: 0rem !important;
+		margin-bottom: 1.5rem !important;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	/* ---------------- INTRO SLIDER ---------------- */
+	.pagina-01 {
+		background-color: hsl(0, 0%, 8%);
+		z-index: 4;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.img-p01 {
+		position: relative;
+		top: -3rem;
+		width: 16rem;
+		height: auto;
+	}
+
+	.loader {
+		height: 3.9rem;
+		width: auto;
+		position: relative;
+		top: 2rem;
+		animation: rotacion 5s infinite;
+	}
+
+	.card-intro {
+		background-color: hsl(0, 0%, 95%);
+		height: 30.55rem;
+		width: 21.71rem;
+		border-radius: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		top: -3rem;
+	}
+
+	.img-card {
+		width: 17rem;
+		height: auto;
+		margin-bottom: 3rem;
+	}
+
+	.p-card {
+		color: hsl(0, 0%, 0%);
+		text-align: center;
+		font-size: 26px;
+		font-weight: bold;
+		line-height: 30px;
+		width: 80%;
+	}
+
+	/* ---------------- Password Generator Module ---------------- */
+
+	.pass-generator {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: row;
+		margin-top: 2rem;
+		margin-bottom: 6rem;
+		max-width: 70rem;
+	}
+
+	/* ---------------- Logo Titulo Bajada ---------------- */
+
+	.head {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 50vw;
+		max-width: 50vw;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.logo-head {
+		margin-top: 0rem;
+		margin-bottom: 1.5rem;
+		width: 12rem;
+	}
+
+	.titulo-head {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1rem;
+	}
+
+	.h1-titulo {
+		text-align: center;
+		font-weight: bold;
+		font-size: 3rem;
+		line-height: 60px;
+		margin-bottom: 0.8rem;
+		width: 36rem;
+	}
+
+	.p-bajada {
+		text-align: center;
+		font-size: 1.5rem;
+		line-height: 30px;
+		width: 30rem;
+	}
+
+	/* ---------------- Password Holder ---------------- */
+
+	.pass-view {
+		width: 40vw;
+		max-width: 50vw;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding-top: 1rem;
+		padding-left: 6rem;
+		margin-top: 4rem;
+		margin-bottom: 0;
+	}
+
+	/* ---------------- INFO CONTAINER ---------------- */
+
+	.info-container {
+		background: hsl(0, 0%, 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 3rem;
+		padding-bottom: 4rem;
+		width: 100vw;
+	}
+
+	.titulo-info-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 88vw;
+		max-width: 90rem;
+		margin-bottom: 1rem;
+	}
+
+	.logo-info {
+		width: 7.2rem;
+		max-width: 32%;
+	}
+
+	.titulo-info {
+		color: hsl(0, 0%, 0%);
+		margin-left: 2rem;
+		font-weight: bold;
+		font-size: 2.6rem;
+		line-height: 2.8rem;
+		text-align: left;
+		max-width: 22rem;
+	}
+
+	.texto-parrafo {
+		color: hsl(0, 0%, 0%);
+		font-family: Roboto;
+		font-size: 1rem;
+		line-height: 24px;
+		text-align: justify;
+		text-justify: inter-word;
+		margin-top: 2rem;
+		width: 86%;
+		max-width: 70rem;
+	}
 }
