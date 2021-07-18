@@ -486,9 +486,9 @@ input[type="range"]::-ms-track {
 	-webkit-border-radius: none;
 	height: 3rem;
 	width: 90%;
-	background: hsl(0, 0%, 89%);
-	-webkit-border-radius: 100px;
-	border-radius: 100px;
+	background: hsl(0, 0%, 95%);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 	border: none;
 	color: hsl(0, 0%, 55%);
 	text-align: center;
@@ -496,7 +496,7 @@ input[type="range"]::-ms-track {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 1.1rem;
-	border: 2px solid hsla(191, 83%, 47%, 0.3);
+	border: 2px solid hsl(0, 1%, 71%);
 	margin-bottom: 1rem;
 	outline: none;
 	-webkit-box-shadow: none;
