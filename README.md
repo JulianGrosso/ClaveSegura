@@ -1,10 +1,12 @@
-<img src="assets/img/Logo.png" width="auto" height="220">
+<a href="https://juliangrosso.github.io/PasswordSafe/"><img src="./assets/PassSafe_App-Showcase_02_Browser_LOW.png" width="auto" height="auto"></a>
 
 # Password Safe
 
-Generate secure and random passwords to keep you safe online.
+### [Live Demo](https://juliangrosso.github.io/PasswordSafe/)
 
-[Live Demo](https://juliangrosso.github.io/PasswordSafe/)
+## Description
+
+Generate secure and random passwords to keep you safe online.
 
 ## Stack
 
