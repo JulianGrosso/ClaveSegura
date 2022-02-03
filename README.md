@@ -1,4 +1,4 @@
-<a href="https://juliangrosso.github.io/PasswordSafe/"><img src="./assets/PassSafe_App-Showcase_02_Browser_LOW.png" width="auto" height="auto"></a>
+<a href="https://juliangrosso.github.io/PasswordSafe/"><img src="./github_assets/PassSafe_App-Showcase_02_Browser_LOW.png" width="auto" height="auto"></a>
 
 # Password Safe
 
